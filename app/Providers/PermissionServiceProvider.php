@@ -21,10 +21,16 @@ class PermissionServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Gate::define('premium', function ($user) {
+            if ($user->role == 'admin') {
+                return true;
+            }
             return $user->membership->plan_type == 'premium';
         });
 
         Gate::define('free', function ($user) {
+            if ($user->role == 'admin') {
+                return true;
+            }
             return $user->membership->plan_type == 'free';
         });
     }

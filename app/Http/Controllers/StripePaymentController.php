@@ -29,7 +29,6 @@ class StripePaymentController extends Controller
      */
     public function __construct(User $user, Membership $membership)
     {
-        $this->middleware('auth');
         $this->user = $user;
         $this->membership = $membership;
     }

@@ -42,9 +42,11 @@
                         </div>
                         
                         <button type="submit" value="1" name="publish_now" class="btn btn-success">{{ __('Publish Now') }}</button>
+                        
                         @can('premium')
                         <a href="javascrip:;"  class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">{{ __('Publish Later') }}</a>
                         @endcan
+
                         <button type="submit" value="3" name="draft" class="btn btn-dark">{{ __('Draft') }}</button>
 
                         @can('premium')
